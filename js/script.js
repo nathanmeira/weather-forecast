@@ -9,11 +9,10 @@ window.onload = function(){
 function getWeatherByCity(city){
     var url = BASE_URL + "?q=" + city + "&appid=" + API_KEY + "&units=metric";
 
-    for (var i = 0; i < 7; i++){
+    for (let i = 0; i < 7; i++){
         getJSON(url, function(status,data){
             
-            let icon = data.list[0].weather[0].icon;
-            let name = data.city.name;
+            let icon = data.list[i].weather[0].icon;
             let temp = data.list[i].main.temp;
             let dt_txt = data.list[i].dt_txt;
             let speed = data.list[i].wind.speed;
