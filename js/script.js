@@ -9,7 +9,7 @@ window.onload = function(){
 function getWeatherByCity(city){
     var url = BASE_URL + "?q=" + city + "&appid=" + API_KEY + "&units=metric";
 
-    for (var i = 0; i < 5; i++){
+    for (var i = 0; i < 7; i++){
         getJSON(url, function(status,data){
             
             let icon = data.list[0].weather[0].icon;
@@ -22,8 +22,7 @@ function getWeatherByCity(city){
             var w = "";
             w += "<article>" + 
                     "<img alt='weather icon' src='http://openweathermap.org/img/w/"+icon+".png' />" +
-                    "<h2>"+name+"</h2>" +
-                    "<p>"+temp+" ºC</p>" +
+                    "<h1>"+temp+" ºC</h1>" +
                     "<p>"+dt_txt+" ºC</p>" +
                     "<p>"+speed+" m/s</p>" +
                     "<p>"+deg+" hpa</p>" +
